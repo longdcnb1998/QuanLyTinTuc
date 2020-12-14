@@ -24,6 +24,8 @@ public class Tintuc {
     @ColumnInfo(name = "ngaydang")
     private long ngaydang;
 
+    private boolean duocchon = false;
+
     public Tintuc(int maTL, String tieude, String chitiet, String linkanh, String theloai, long ngaydang) {
         this.maTL = maTL;
         this.tieude = tieude;
@@ -31,6 +33,14 @@ public class Tintuc {
         this.linkanh = linkanh;
         this.theloai = theloai;
         this.ngaydang = ngaydang;
+    }
+
+    public boolean isDuocchon() {
+        return duocchon;
+    }
+
+    public void setDuocchon(boolean duocchon) {
+        this.duocchon = duocchon;
     }
 
     public int getMa() {

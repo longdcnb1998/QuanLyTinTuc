@@ -21,16 +21,21 @@ public class TinTucViewModel extends AndroidViewModel {
         return repository.getAllTinTuc(id);
     }
 
-    public void insertBook(Tintuc tintuc) {
+    public void insert(Tintuc tintuc) {
         repository.insert(tintuc);
     }
 
 
-    public void deleteBook(Tintuc tintuc) {
+    public void delete(Tintuc tintuc) {
         repository.delete(tintuc);
     }
 
-    public void updateBook(Tintuc tintuc) {
+
+    public void update(Tintuc tintuc) {
         repository.update(tintuc);
+    }
+
+    public void deleteAll(int id) {
+        repository.deleteAllTinTuc(id);
     }
 }

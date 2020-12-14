@@ -31,3 +31,11 @@ q
 Aapp/src/main/java/com/example/quanlytintuc/SuaTheLoaiActivty.java,5\9\596e708407e7743a3e2d73c6c3dbe3e2e94abc3e
 l
 <app/src/main/java/com/example/quanlytintuc/MainActivity.java,b\7\b783f7a7c9eee028603d429b95ab1b84fd373e90
+q
+Aapp/src/main/java/com/example/quanlytintuc/SuaTinTucActivity.java,2\1\210186b7e974e42fef702b5f4591733a18a47647
+m
+=app/src/main/java/com/example/quanlytintuc/TinTucAdapter.java,4\4\4448d829ce26074e8bb8c1c897c99fb91313e18c
+u
+Eapp/src/main/java/com/example/quanlytintuc/ChiTietTinTucActivity.java,7\7\776e14b47531b402aed688c9346718d745ee3e2a
+r
+Bapp/src/main/java/com/example/quanlytintuc/ThemTinTucActivity.java,6\9\69d59ae3a3240acc49ca5334d0e8a8bb036cb0cc

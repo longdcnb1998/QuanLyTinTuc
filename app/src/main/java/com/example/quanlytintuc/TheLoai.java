@@ -15,6 +15,15 @@ public class TheLoai {
     @ColumnInfo(name = "mota")
     private String mota;
 
+    private boolean duocchon = false;
+
+    public boolean isDuocchon() {
+        return duocchon;
+    }
+
+    public void setDuocchon(boolean duocchon) {
+        this.duocchon = duocchon;
+    }
 
     public TheLoai(String ten, String mota) {
         this.ten = ten;

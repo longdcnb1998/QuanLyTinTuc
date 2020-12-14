@@ -1,28 +1,28 @@
 
-£
-java:S1186u"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•ÏÄ™ıÿÿÿÿ8ˆ«®¶å.
 n
-java:S1301¢"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ8‰ç·¶å.
-x	java:S116#"\Rename this field "EDIT_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯„ ğ8Ùï†¶å.
-m	java:S117c"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÂá£8ˆ«®¶å.
-G
-java:S18742"*Remove this use of "of"; it is deprecated.(¤Ã¸8‹İ¶å.
-W
-java:S18742":Remove this use of "ViewModelProviders"; it is deprecated.(¤Ã¸8‘ØÂ¶å.
-`
-java:S2259‰"BA "NullPointerException" could be thrown; "data" is nullable here.(ŒÒ­¦8ˆ«®¶å.
-`
-java:S2259€"BA "NullPointerException" could be thrown; "data" is nullable here.(Ø¥‡Ô8ˆ«®¶å.
-E
-java:S1148N"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ç«ù¶å.
-t
-java:S3252h"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(Î®×Ä8ˆ«®¶å.
-w	java:S116""[Rename this field "ADD_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦İ²ô8Ùï†¶å.
-w
-java:S1450 "ZRemove the "listTheLoai" field and declare it as a local variable in the relevant methods.(©¡ÈË8Öì¶å.
+java:S1301±"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ8‰ç·¶å.
 J
-java:S1185\"(Remove this method to simply inherit it.(Ó»×¶şÿÿÿÿ8ˆ«®¶å.
-i
-java:S1192:"LDefine a constant instead of duplicating this literal "Description" 4 times.(ÏÚòÊ8ˆ«®¶å.
+java:S1185k"(Remove this method to simply inherit it.(Ó»×¶şÿÿÿÿ8ˆ«®¶å.
+`
+java:S2259˜"BA "NullPointerException" could be thrown; "data" is nullable here.(ŒÒ­¦8ˆ«®¶å.
+x	java:S116#"\Rename this field "EDIT_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯„ ğ8Ùï†¶å.
+¤
+java:S1186„"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•ÏÄ™ıÿÿÿÿ8ˆ«®¶å.
+W
+java:S18743":Remove this use of "ViewModelProviders"; it is deprecated.(¤Ã¸8‘ØÂ¶å.
+G
+java:S18743"*Remove this use of "of"; it is deprecated.(¤Ã¸8‹İ¶å.
+m	java:S117r"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÂá£8ˆ«®¶å.
+`
+java:S2259"BA "NullPointerException" could be thrown; "data" is nullable here.(Ø¥‡Ô8ˆ«®¶å.
 L
 java:S1068 "/Remove this unused "listTheLoai" private field.(©¡ÈË8ºÚ‡¶å.
+w	java:S116""[Rename this field "ADD_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦İ²ô8Ùï†¶å.
+t
+java:S3252w"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(Î®×Ä8ˆ«®¶å.
+i
+java:S1192;"LDefine a constant instead of duplicating this literal "Description" 4 times.(ÏÚòÊ8ˆ«®¶å.
+E
+java:S1148K"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ç«ù¶å.
+w
+java:S1450 "ZRemove the "listTheLoai" field and declare it as a local variable in the relevant methods.(©¡ÈË8Öì¶å.

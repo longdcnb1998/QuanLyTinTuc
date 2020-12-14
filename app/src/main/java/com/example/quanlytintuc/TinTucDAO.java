@@ -21,9 +21,9 @@ public interface TinTucDAO {
     @Delete
     void delete(Tintuc tintuc);
 
-    @Query("DELETE FROM tb_tintuc ")
-    void deleteAll();
+    @Query("DELETE FROM tb_tintuc WHERE ma =:id ")
+    void deleteAll(int id);
 
-    @Query("SELECT * FROM tb_tintuc WHERE ma =:id ORDER BY ngaydang  DESC")
+    @Query("SELECT * FROM tb_tintuc WHERE maTL =:id ORDER BY ngaydang  DESC")
     LiveData<List<Tintuc>> getALLTinTuc(int id);
 }

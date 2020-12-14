@@ -25,6 +25,6 @@ public interface TheLoaiDAO {
     @Query("DELETE FROM tb_theloai ")
     void deleteAll();
 
-    @Query("SELECT * FROM tb_theloai")
+    @Query("SELECT * FROM tb_theloai ")
     LiveData<List<TheLoai>> getALLTheLoai();
 }

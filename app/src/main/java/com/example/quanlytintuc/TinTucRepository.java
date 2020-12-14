@@ -20,19 +20,19 @@ public class TinTucRepository {
     }
 
     public void update(Tintuc tintuc) {
-        new UpdateStudentAsyncTask(tinTucDAO).execute(tintuc);
+        new UpdateTinTucAsyncTask(tinTucDAO).execute(tintuc);
     }
 
     public void delete(Tintuc tintuc) {
-        new DeleteStudentAsyncTask(tinTucDAO).execute(tintuc);
-    }
-
-    public void deleteAllTheLoai() {
-        new DeleteAllStudentAsyncTask(tinTucDAO).execute();
+        new DeleteTinTucAsyncTask(tinTucDAO).execute(tintuc);
     }
 
     public LiveData<List<Tintuc>> getAllTinTuc(int id) {
         return tinTucDAO.getALLTinTuc(id);
+    }
+
+    public void deleteAllTinTuc(int id) {
+        tinTucDAO.deleteAll(id);
     }
 
     private static class InsertTinTucAsyncTask extends AsyncTask<Tintuc, Void, Void> {
@@ -50,11 +50,11 @@ public class TinTucRepository {
         }
     }
 
-    private static class UpdateStudentAsyncTask extends AsyncTask<Tintuc, Void, Void> {
+    private static class UpdateTinTucAsyncTask extends AsyncTask<Tintuc, Void, Void> {
 
         private TinTucDAO tinTucDAO;
 
-        public UpdateStudentAsyncTask(TinTucDAO tinTucDAO) {
+        public UpdateTinTucAsyncTask(TinTucDAO tinTucDAO) {
             this.tinTucDAO = tinTucDAO;
         }
 
@@ -65,11 +65,11 @@ public class TinTucRepository {
         }
     }
 
-    private static class DeleteStudentAsyncTask extends AsyncTask<Tintuc, Void, Void> {
+    private static class DeleteTinTucAsyncTask extends AsyncTask<Tintuc, Void, Void> {
 
         private TinTucDAO tinTucDAO;
 
-        public DeleteStudentAsyncTask(TinTucDAO tinTucDAO) {
+        public DeleteTinTucAsyncTask(TinTucDAO tinTucDAO) {
             this.tinTucDAO = tinTucDAO;
         }
 
@@ -80,19 +80,5 @@ public class TinTucRepository {
         }
     }
 
-    private static class DeleteAllStudentAsyncTask extends AsyncTask<Void, Void, Void> {
-
-        private TinTucDAO tinTucDAO;
-
-        public DeleteAllStudentAsyncTask(TinTucDAO tinTucDAO) {
-            this.tinTucDAO = tinTucDAO;
-        }
-
-        @Override
-        protected Void doInBackground(Void... Void) {
-            tinTucDAO.deleteAll();
-            return null;
-        }
-    }
 
 }

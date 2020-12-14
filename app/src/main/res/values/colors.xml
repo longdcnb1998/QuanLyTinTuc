@@ -3,4 +3,35 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+
+    <!-- General -->
+    <color name="colorText">#333333</color>
+    <color name="colorPopupBackground">#4D000000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="color2A">#2A2A2A</color>
+    <color name="colorE5">#E5E5E5</color>
+    <color name="colorF8">#F8F8F8</color>
+    <color name="colorF2">#F2F2F2</color>
+    <color name="color82">#828282</color>
+    <!-- Vocabulary Game -->
+    <color name="bg_michi">#23AC38</color>
+    <!-- Learned Word List-->
+    <color name="start_color_green">#58CC02</color>
+    <color name="end_color_green">#23AC38</color>
+    <color name="color_unselected_level">#BDBDBD</color>
+    <color name="color_learned_words_level_1">#E21205</color>
+    <color name="color_learned_words_level_2">#FFCB08</color>
+    <color name="color_learned_words_level_3">#29C3EA</color>
+    <color name="color_learned_words_level_4">#1793F6</color>
+    <color name="color_learned_words_level_5">#213782</color>
+    <color name="color_grey_70">#B3FFFFFF</color>
+    <color name="start_color_yellow">#FFCB08</color>
+    <color name="end_color_yellow">#FF9600</color>
+
+
+    <color name="color_orange">#FF9800</color>
+    <color name="colorBlue">#2196F3</color>
+
 </resources>

@@ -8,36 +8,41 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.example.quanlytintuc.databinding.ActivitySuaTheLoaiActivtyBinding;
+import com.example.quanlytintuc.databinding.ActivitySuaTinTucBinding;
 
 import java.util.Objects;
 
-public class SuaTheLoaiActivty extends AppCompatActivity {
+public class SuaTinTucActivity extends AppCompatActivity {
 
-    ActivitySuaTheLoaiActivtyBinding binding;
+
+    ActivitySuaTinTucBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sua_the_loai_activty);
+        setContentView(R.layout.activity_sua_tin_tuc);
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_sua_the_loai_activty);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_sua_tin_tuc);
+
+
         Objects.requireNonNull(getSupportActionBar()).setHomeAsUpIndicator(R.drawable.ic_close);
         Intent intent = getIntent();
 
 
         int id = intent.getIntExtra("Id", -1);
         if (id != -1) {
-            setTitle("Sua The Loai");
+            setTitle("Sua Tin Tuc");
             String name = intent.getStringExtra("Name");
             String des = intent.getStringExtra("Description");
-            binding.editTextName.setText(name);
-            binding.editTextDes.setText(des);
-        } else {
-            setTitle("Them The Loai");
+            binding.edtTieuDe.setText(name);
+            binding.edtChiTiet.setText(des);
+            String linkAnh = intent.getStringExtra("LinkAnh");
+            String TheLoai = intent.getStringExtra("TheLoai");
+            binding.edtLinkAnh.setText(linkAnh);
+            binding.edtTheLoai.setText(TheLoai);
         }
 
-        binding.btnThem.setOnClickListener(new View.OnClickListener() {
+        binding.btnSua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 LuuTheLoai();
@@ -47,8 +52,8 @@ public class SuaTheLoaiActivty extends AppCompatActivity {
 
 
     private void LuuTheLoai() {
-        String name = binding.editTextName.getText().toString().trim();
-        String des = binding.editTextDes.getText().toString().trim();
+        String name = binding.edtTieuDe.getText().toString().trim();
+        String des = binding.edtChiTiet.getText().toString().trim();
 
         if (name.isEmpty() || des.isEmpty()) {
             Toast.makeText(this, "Làm ơn nhập đủ dữ liệu", Toast.LENGTH_SHORT).show();

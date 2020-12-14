@@ -1,5 +1,8 @@
 
-N
-java:S1068",Remove this unused "mContext" private field.(»úÅ¾øÿÿÿÿ8È›š¶å.
+o
+java:S1450"RRemove the "pos" field and declare it as a local variable in the relevant methods.(Ùßÿ—8ã¿°ýå.
+D
+java:S1068"'Remove this unused "pos" private field.(Ùßÿ—8ã¿°ýå.
+E	java:S108c")Either remove or fill this block of code.(÷¦¦Ò8üâŠÏå.
 •
-java:S1319"sThe type of the "theLoais" object should be an interface such as "List" rather than the implementation "ArrayList".(ªÖ±½øÿÿÿÿ8ÐÄ³¶å.
+java:S1319"sThe type of the "theLoais" object should be an interface such as "List" rather than the implementation "ArrayList".(ªÖ±½øÿÿÿÿ8ÐÄ³¶å.

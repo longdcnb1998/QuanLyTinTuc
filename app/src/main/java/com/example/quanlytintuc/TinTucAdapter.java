@@ -1,6 +1,5 @@
 package com.example.quanlytintuc;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,108 +9,93 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.quanlytintuc.databinding.ItemTheLoaiBinding;
+import com.example.quanlytintuc.databinding.ItemTinTucBinding;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHolder> {
+public class TinTucAdapter extends RecyclerView.Adapter<TinTucAdapter.ViewHolder> {
+
     private Context mContext;
-    private ArrayList<TheLoai> theLoais;
+    private ArrayList<Tintuc> tintucs;
     private Callback callback;
-    private int pos = -1;
 
-    public TheLoaiAdapter(Context mContext, ArrayList<TheLoai> theLoais, Callback callback) {
+    public TinTucAdapter(Context mContext, ArrayList<Tintuc> tintucs, Callback callback) {
         this.mContext = mContext;
-        this.theLoais = theLoais;
+        this.tintucs = tintucs;
         this.callback = callback;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemTheLoaiBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.item_the_loai, parent, false);
+        ItemTinTucBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.item_tin_tuc, parent, false);
         return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bindData(position);
-        pos = position;
     }
 
     @Override
     public int getItemCount() {
-        return theLoais.size();
+        return tintucs.size();
     }
-
-    public void setStudents(List<TheLoai> theLoais) {
-        this.theLoais = (ArrayList<TheLoai>) theLoais;
-        notifyDataSetChanged();
-    }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        ItemTheLoaiBinding binding;
+        ItemTinTucBinding binding;
 
-        public ViewHolder(@NonNull ItemTheLoaiBinding binding) {
+        public ViewHolder(@NonNull ItemTinTucBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+
             binding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View view) {
                     int position = getAdapterPosition();
                     if (callback != null && position != RecyclerView.NO_POSITION) {
-                        callback.onItemClick(theLoais.get(position));
+                        callback.onItemClick(tintucs.get(position));
                     }
                 }
             });
+
             binding.getRoot().setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
                     int position = getAdapterPosition();
                     if (callback != null && position != RecyclerView.NO_POSITION) {
-                        callback.onItemLongClick(theLoais.get(position));
+                        callback.onItemLongClick(tintucs.get(position));
                     }
-                    for (int i = 0; i < theLoais.size(); i++) {
-                        theLoais.get(i).setDuocchon(false);
+                    for (int i = 0; i < tintucs.size(); i++) {
+                        tintucs.get(i).setDuocchon(false);
                     }
-                    theLoais.get(position).setDuocchon(true);
+                    tintucs.get(position).setDuocchon(true);
                     notifyDataSetChanged();
                     return true;
                 }
             });
         }
 
-        @SuppressLint("UseCompatLoadingForDrawables")
         public void bindData(int position) {
-            TheLoai theLoai = theLoais.get(position);
-            if (theLoai != null) {
-                binding.name.setText(theLoai.getTen());
-                binding.des.setText(theLoai.getMota());
-                if (theLoai.isDuocchon()) {
-                    binding.name.setTextSize(20);
-                    binding.des.setTextSize(50);
+            Tintuc tintuc = tintucs.get(position);
+            if (tintuc != null) {
+                binding.name.setText(tintuc.getTieude());
+                binding.des.setText(tintuc.getChitiet());
+
+                if (tintuc.isDuocchon()) {
                     binding.layoutItem.setBackground(mContext.getResources().getDrawable(R.drawable.bg_item_selected));
                 } else {
-                    binding.name.setTextColor(mContext.getResources().getColor(R.color.colorBlack));
                     binding.layoutItem.setBackground(mContext.getResources().getDrawable(R.drawable.bg_item_the_loai));
                 }
-                if (position == 0){
-
-                }
             }
+
         }
     }
 
     public interface Callback {
-        void onItemClick(TheLoai theLoai);
+        void onItemClick(Tintuc tintuc);
 
-        void onItemLongClick(TheLoai theLoai);
-    }
-
-    public void setOnClickListener(Callback callback) {
-        this.callback = callback;
+        void onItemLongClick(Tintuc tintuc);
     }
 }

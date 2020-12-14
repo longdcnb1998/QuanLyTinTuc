@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private TheLoaiAdapter adapter;
     private int ADD_REQUEST_CODE = 1;
     private int EDIT_REQUEST_CODE = 2;
+    private TheLoai theLoaiDuocChon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onItemLongClick(TheLoai theLoai) {
-                    Intent intent = new Intent(MainActivity.this, SuaTheLoaiActivty.class);
-                    intent.putExtra("Id", theLoai.getMa());
-                    intent.putExtra("Name", theLoai.getTen());
-                    intent.putExtra("Description", theLoai.getMota());
-                    startActivityForResult(intent, EDIT_REQUEST_CODE);
+                    theLoaiDuocChon = theLoai;
                 }
             });
             binding.recyclerView.setAdapter(adapter);
@@ -86,6 +83,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, ADD_REQUEST_CODE);
             }
         });
+    binding.buttonEdit.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this, SuaTheLoaiActivty.class);
+            intent.putExtra("Id", theLoaiDuocChon.getMa());
+            intent.putExtra("Name", theLoaiDuocChon.getTen());
+            intent.putExtra("Description", theLoaiDuocChon.getMota());
+            startActivityForResult(intent,EDIT_REQUEST_CODE);
+        }
+    });
+
+    binding.buttonDelete.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            viewModel.delete(theLoaiDuocChon);
+            adapter.notifyDataSetChanged();
+        }
+    });
     }
 
     @Override

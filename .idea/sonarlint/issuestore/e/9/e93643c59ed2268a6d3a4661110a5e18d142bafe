@@ -1,3 +1,2 @@
 
-m
-java:S13015"KReplace this "switch" statement by "if" statements to increase readability.(ψε΄΅ÿÿÿÿÿ8Αÿξ¶ε.
+o	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Ξ¬όÿÿÿÿ8Ρ΄΄ύε.

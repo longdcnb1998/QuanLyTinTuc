@@ -2,12 +2,9 @@ package com.example.quanlytintuc;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
@@ -31,35 +28,25 @@ public class ThemTheLoaiActivity extends AppCompatActivity {
 
         int id = intent.getIntExtra("Id", -1);
         if (id != -1) {
-            setTitle("Edit Student");
+            setTitle("Sua The Loai");
             String name = intent.getStringExtra("Name");
             String des = intent.getStringExtra("Description");
             binding.editTextName.setText(name);
             binding.editTextDes.setText(des);
         } else {
-            setTitle("Add Student");
+            setTitle("Them The Loai");
         }
+
+        binding.btnThem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LuuTheLoai();
+            }
+        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.add_menu, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.save:
-                saveStudent();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    private void saveStudent() {
+    private void LuuTheLoai() {
         String name = binding.editTextName.getText().toString().trim();
         String des = binding.editTextDes.getText().toString().trim();
 
