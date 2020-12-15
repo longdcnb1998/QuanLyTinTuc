@@ -1,20 +1,0 @@
-
-\
-java:S1874-":Remove this use of "ViewModelProviders"; it is deprecated.(“ÏÅ£üÿÿÿÿ8Ü†ÊÎå.
-_
-java:S2259l"BA "NullPointerException" could be thrown; "data" is nullable here.(ŒÒ­¦8Ü†ÊÎå.
-F
-java:S1481q")Remove this unused "name" local variable.(Ø¥‡Ô8§ã²Ïå.
-w	java:S116"[Rename this field "ADD_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦İ²ô8Ü†ÊÎå.
-n
-java:S1301…"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ8Ü†ÊÎå.
-L
-java:S1874-"*Remove this use of "of"; it is deprecated.(“ÏÅ£üÿÿÿÿ8Ü†ÊÎå.
-x	java:S116"\Rename this field "EDIT_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯„ ğ8Ü†ÊÎå.
-D
-java:S1481r"(Remove this unused "des" local variable.(×’´8§ã²Ïå.
-_
-java:S2259b"BA "NullPointerException" could be thrown; "data" is nullable here.(Ø¥‡Ô8Ü†ÊÎå.
-S
-java:S1117l"6Rename "id" which hides the field declared at line 32.(ŒÒ­¦8¤Ïå.
-]	java:S125t"<This block of commented-out lines of code should be removed.(²ä¡æıÿÿÿÿ8§ã²Ïå.

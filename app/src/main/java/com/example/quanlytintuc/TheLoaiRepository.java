@@ -6,6 +6,10 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.quanlytintuc.AppDatabase;
+import com.example.quanlytintuc.TheLoai;
+import com.example.quanlytintuc.TheLoaiDAO;
+
 import java.util.List;
 
 public class TheLoaiRepository {

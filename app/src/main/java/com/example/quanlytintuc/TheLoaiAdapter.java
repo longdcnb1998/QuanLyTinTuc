@@ -13,13 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.quanlytintuc.databinding.ItemTheLoaiBinding;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHolder> {
     private Context mContext;
     private ArrayList<TheLoai> theLoais;
     private Callback callback;
-    private int pos = -1;
 
     public TheLoaiAdapter(Context mContext, ArrayList<TheLoai> theLoais, Callback callback) {
         this.mContext = mContext;
@@ -37,17 +35,11 @@ public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bindData(position);
-        pos = position;
     }
 
     @Override
     public int getItemCount() {
         return theLoais.size();
-    }
-
-    public void setStudents(List<TheLoai> theLoais) {
-        this.theLoais = (ArrayList<TheLoai>) theLoais;
-        notifyDataSetChanged();
     }
 
 
@@ -88,18 +80,13 @@ public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHold
         public void bindData(int position) {
             TheLoai theLoai = theLoais.get(position);
             if (theLoai != null) {
-                binding.name.setText(theLoai.getTen());
-                binding.des.setText(theLoai.getMota());
+                binding.name.setText("Tiêu đề :"+theLoai.getTen());
+                binding.des.setText("Mô tả : "+theLoai.getMota());
                 if (theLoai.isDuocchon()) {
-                    binding.name.setTextSize(20);
-                    binding.des.setTextSize(50);
                     binding.layoutItem.setBackground(mContext.getResources().getDrawable(R.drawable.bg_item_selected));
                 } else {
                     binding.name.setTextColor(mContext.getResources().getColor(R.color.colorBlack));
                     binding.layoutItem.setBackground(mContext.getResources().getDrawable(R.drawable.bg_item_the_loai));
-                }
-                if (position == 0){
-
                 }
             }
         }
@@ -111,7 +98,4 @@ public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHold
         void onItemLongClick(TheLoai theLoai);
     }
 
-    public void setOnClickListener(Callback callback) {
-        this.callback = callback;
-    }
 }

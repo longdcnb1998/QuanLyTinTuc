@@ -6,6 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.quanlytintuc.TinTucRepository;
+import com.example.quanlytintuc.Tintuc;
+
 import java.util.List;
 
 public class TinTucViewModel extends AndroidViewModel {

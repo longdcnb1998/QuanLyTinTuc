@@ -4,15 +4,16 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.quanlytintuc.Tintuc;
 
 import java.util.List;
 
 @Dao
 public interface TinTucDAO {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert()
     void insert(Tintuc tintuc);
 
     @Update

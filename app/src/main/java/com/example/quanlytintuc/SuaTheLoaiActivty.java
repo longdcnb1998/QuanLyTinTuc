@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.example.quanlytintuc.R;
 import com.example.quanlytintuc.databinding.ActivitySuaTheLoaiActivtyBinding;
 
 import java.util.Objects;

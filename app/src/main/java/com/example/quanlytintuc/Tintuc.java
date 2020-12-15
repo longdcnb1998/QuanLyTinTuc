@@ -6,6 +6,8 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import com.example.quanlytintuc.TheLoai;
+
 @Entity(tableName = "tb_tintuc",foreignKeys = @ForeignKey(entity = TheLoai.class,parentColumns = "ma",childColumns = "maTL"),indices = {@Index(value = "maTL")})
 public class Tintuc {
     @PrimaryKey(autoGenerate = true)

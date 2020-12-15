@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.example.quanlytintuc.R;
 import com.example.quanlytintuc.databinding.ActivityThemTinTucBinding;
 
 public class ThemTinTucActivity extends AppCompatActivity implements View.OnClickListener {
@@ -39,22 +40,20 @@ public class ThemTinTucActivity extends AppCompatActivity implements View.OnClic
 
         if (name.isEmpty() || des.isEmpty()) {
             Toast.makeText(this, "Làm ơn nhập đủ dữ liệu", Toast.LENGTH_SHORT).show();
-        }
-
-        Intent data = new Intent();
-        data.putExtra("Name", name);
-        data.putExtra("Description", des);
-        data.putExtra("LinkAnh", linkAnh);
-        data.putExtra("ThoiGian", System.currentTimeMillis());
-
-
-        int id = getIntent().getIntExtra("Id", -1);
-        if (id != -1) {
+        } else {
+            int id = getIntent().getIntExtra("Id", -1);
+            Intent data = new Intent();
             data.putExtra("Id", id);
+            data.putExtra("Name", name);
+            data.putExtra("Description", des);
+            data.putExtra("LinkAnh", linkAnh);
+            data.putExtra("ThoiGian", System.currentTimeMillis());
 
+            setResult(RESULT_OK, data);
+            finish();
         }
-        setResult(RESULT_OK, data);
-        finish();
+
+
     }
 
     @Override

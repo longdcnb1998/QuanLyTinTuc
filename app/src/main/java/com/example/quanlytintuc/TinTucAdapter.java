@@ -80,9 +80,8 @@ public class TinTucAdapter extends RecyclerView.Adapter<TinTucAdapter.ViewHolder
         public void bindData(int position) {
             Tintuc tintuc = tintucs.get(position);
             if (tintuc != null) {
-                binding.name.setText(tintuc.getTieude());
-                binding.des.setText(tintuc.getChitiet());
-
+                binding.name.setText("Tiêu đề : " + tintuc.getTieude());
+                binding.des.setText("Chi tiết" + tintuc.getChitiet());
                 if (tintuc.isDuocchon()) {
                     binding.layoutItem.setBackground(mContext.getResources().getDrawable(R.drawable.bg_item_selected));
                 } else {

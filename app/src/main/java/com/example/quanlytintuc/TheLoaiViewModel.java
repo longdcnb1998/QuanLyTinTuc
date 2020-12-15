@@ -6,6 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.quanlytintuc.TheLoai;
+import com.example.quanlytintuc.TheLoaiRepository;
+
 import java.util.List;
 
 public class TheLoaiViewModel extends AndroidViewModel {

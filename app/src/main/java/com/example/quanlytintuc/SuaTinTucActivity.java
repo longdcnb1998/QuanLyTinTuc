@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.example.quanlytintuc.R;
 import com.example.quanlytintuc.databinding.ActivitySuaTinTucBinding;
 
 import java.util.Objects;
@@ -34,12 +35,12 @@ public class SuaTinTucActivity extends AppCompatActivity {
             setTitle("Sua Tin Tuc");
             String name = intent.getStringExtra("Name");
             String des = intent.getStringExtra("Description");
-            binding.edtTieuDe.setText(name);
-            binding.edtChiTiet.setText(des);
             String linkAnh = intent.getStringExtra("LinkAnh");
             String TheLoai = intent.getStringExtra("TheLoai");
+            binding.edtTieuDe.setText(name);
+            binding.edtChiTiet.setText(des);
             binding.edtLinkAnh.setText(linkAnh);
-            binding.edtTheLoai.setText(TheLoai);
+            binding.tvTheLoai.setText(TheLoai);
         }
 
         binding.btnSua.setOnClickListener(new View.OnClickListener() {
@@ -54,20 +55,19 @@ public class SuaTinTucActivity extends AppCompatActivity {
     private void LuuTheLoai() {
         String name = binding.edtTieuDe.getText().toString().trim();
         String des = binding.edtChiTiet.getText().toString().trim();
+        String linkAnh = binding.edtLinkAnh.getText().toString().trim();
 
         if (name.isEmpty() || des.isEmpty()) {
             Toast.makeText(this, "Làm ơn nhập đủ dữ liệu", Toast.LENGTH_SHORT).show();
         }
 
         Intent data = new Intent();
-        data.putExtra("Name", name);
-        data.putExtra("Description", des);
 
         int id = getIntent().getIntExtra("Id", -1);
-        if (id != -1) {
-            data.putExtra("Id", id);
-
-        }
+        data.putExtra("Id", id);
+        data.putExtra("Name", name);
+        data.putExtra("Description", des);
+        data.putExtra("LinkAnh", linkAnh);
         setResult(RESULT_OK, data);
         finish();
     }

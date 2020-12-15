@@ -5,6 +5,10 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.quanlytintuc.AppDatabase;
+import com.example.quanlytintuc.TinTucDAO;
+import com.example.quanlytintuc.Tintuc;
+
 import java.util.List;
 
 public class TinTucRepository {

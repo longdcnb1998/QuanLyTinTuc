@@ -72,9 +72,10 @@ public class DanhSachTinTucActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DanhSachTinTucActivity.this, SuaTinTucActivity.class);
                 intent.putExtra("Id", tintucDuocChon.getMa());
-                intent.putExtra("Name", tintucDuocChon.getChitiet());
-                intent.putExtra("LinkAnh",tintucDuocChon.getLinkanh());
-                intent.putExtra("TheLoai",tintucDuocChon.getTheloai());
+                intent.putExtra("Name", tintucDuocChon.getTieude());
+                intent.putExtra("Description", tintucDuocChon.getChitiet());
+                intent.putExtra("LinkAnh", tintucDuocChon.getLinkanh());
+                intent.putExtra("TheLoai", tintucDuocChon.getTheloai());
                 startActivityForResult(intent, EDIT_REQUEST_CODE);
             }
         });
@@ -112,10 +113,11 @@ public class DanhSachTinTucActivity extends AppCompatActivity {
             }
             String name = data.getStringExtra("Name");
             String des = data.getStringExtra("Description");
-
-//            Tintuc tintuc = new Tintuc(name, des);
-//            tintuc.setMa(id);
-//            viewModel.update(tintuc);
+            String linkAnh = data.getStringExtra("LinkAnh");
+            String TheLoai = data.getStringExtra("TheLoai");
+            Tintuc tintuc = new Tintuc(tintucDuocChon.getMaTL(), name, des, linkAnh, theloai, System.currentTimeMillis());
+            tintuc.setMa(id);
+            viewModel.update(tintuc);
             Toast.makeText(this, "Đã cập nhập", Toast.LENGTH_SHORT).show();
         }
 

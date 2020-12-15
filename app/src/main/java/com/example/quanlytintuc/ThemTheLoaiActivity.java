@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.example.quanlytintuc.R;
 import com.example.quanlytintuc.databinding.ActivityThemTheLoaiBinding;
 
 public class ThemTheLoaiActivity extends AppCompatActivity {
@@ -52,18 +53,18 @@ public class ThemTheLoaiActivity extends AppCompatActivity {
 
         if (name.isEmpty() || des.isEmpty()) {
             Toast.makeText(this, "Làm ơn nhập đủ dữ liệu", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent data = new Intent();
+            data.putExtra("Name", name);
+            data.putExtra("Description", des);
+
+            int id = getIntent().getIntExtra("Id", -1);
+            if (id != -1) {
+                data.putExtra("Id", id);
+            }
+
+            setResult(RESULT_OK, data);
+            finish();
         }
-
-        Intent data = new Intent();
-        data.putExtra("Name", name);
-        data.putExtra("Description", des);
-
-        int id = getIntent().getIntExtra("Id", -1);
-        if (id != -1) {
-            data.putExtra("Id", id);
-
-        }
-        setResult(RESULT_OK, data);
-        finish();
     }
 }

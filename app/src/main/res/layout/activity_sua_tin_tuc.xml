@@ -31,13 +31,12 @@
             app:layout_constraintTop_toBottomOf="@+id/edt_tieu_de" />
 
 
-        <EditText
-            android:id="@+id/edt_the_loai"
+        <TextView
+            android:id="@+id/tvTheLoai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Thể loại : "
-            android:inputType="text"
+            android:text="Thể loại : "
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +52,7 @@
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_the_loai" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTheLoai" />
 
         <Button
             android:id="@+id/btn_sua"

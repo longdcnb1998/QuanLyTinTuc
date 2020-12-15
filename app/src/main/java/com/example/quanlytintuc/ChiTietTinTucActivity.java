@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.quanlytintuc.R;
+
 public class ChiTietTinTucActivity extends AppCompatActivity {
 
     @Override
